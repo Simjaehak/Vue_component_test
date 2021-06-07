@@ -1,30 +1,39 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    <speech-box :headerText="A.header" :footerText="A.footer">
+      <div>
+        <p>
+          {{A.message}}
+        </p>
+      </div>
+    </speech-box>
+    <speech-box class="sanders" :headerText="B.header" :footerText="B.footer">
+      <div>
+        <p class="sanders-content">
+          {{B.message}}
+        </p>
+      </div>
+    </speech-box>
   </div>
 </template>
 
 <script>
+import SpeechBox from "./components/SpeechBox";
 export default {
   name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+  components: {SpeechBox},
+  data : function(){
+    return{
+      A: {
+        header : "오바마 대통령 고별 연설문",
+        footer : "2017.01.10 - 시카고 ",
+        message : "저의 동료 국민 여러분......(지면 관계상 생략)"
+      },
+      B: {
+        header : "버니샌더스 경선 패배 연설문",
+        footer : "2016.07.25 - 필라델피아 웰스파고",
+        message : "감사합니다. 여러분 정말 감사합니다......(지면 관계상 생략)"
+      }
     }
   }
 }
