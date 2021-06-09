@@ -2,7 +2,7 @@
   <div id="container">
     <div class="page-header">
       <h1 class="text-center">연락처 관리 어플리케이션</h1>
-      <p>(Dynamic Component + EventBus + Axios<)/p>
+      <p>(Dynamic Component + EventBus + Axios<)</p>
     </div>
     <component :is="currentView" :contact="contact"></component>
     <contactList :contactlist="contactlist"></contactList>
@@ -28,8 +28,8 @@ import UpdateContact from './components/UpdateContact.vue';
 import UpdatePhoto from './components/UpdatePhoto';
 
 import CONF  from './Config.js';
-import eventBid from './EvevntBus.js';
-import Paginate from 'vuejs-pageinte'
+import eventBus from './EventBus.js';
+import Paginate from 'vuejs-paginate';
 
 
 export default {
@@ -154,7 +154,9 @@ export default {
     }
   },
   watch :{
-
+    ['contactlist.pageno'] : function(){
+      this.$refs.pagebuttons.selected = this.contactlist.pageno-1;
+    }
   }
 
 }

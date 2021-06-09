@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "es6-promise": "^4.2.8",
+    "next-redux-wrapper": "^7.0.0",
     "vue": "^2.5.2",
     "vuejs-paginate": "^2.1.0"
   },

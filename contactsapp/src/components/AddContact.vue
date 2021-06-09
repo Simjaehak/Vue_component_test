@@ -1,11 +1,16 @@
 <template>
-    
+  <contactForm mode="add"></contactForm>
 </template>
 
 <script>
-    export default {
-        name: "ContactList"
+  import ContactForm from './ContactForm';
+
+  export default {
+    name      : "addContact",
+    components: {
+      ContactForm
     }
+  }
 </script>
 
 <style scoped>

@@ -1,11 +1,15 @@
 <template>
-    
+  <contactForm mode="update" :contact="contact"></contactForm>
 </template>
 
 <script>
-    export default {
-        name: "ContactList"
-    }
+  import ContactForm from './ContactForm';
+
+  export default {
+    name      : "updateContact",
+    components: {ContactForm},
+    props     : ['contact']
+  }
 </script>
 
 <style scoped>
