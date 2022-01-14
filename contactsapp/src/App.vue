@@ -40,7 +40,7 @@ export default {
       currentView : null,
       contact : {no:0, name :11,tell: '', address:'',photo:''},
       contactlist:{
-        pageno:1,pagesize:CONF,PAGESIZE, totalcount:0,contacts:[]
+        pageno:1,pagesize:CONF.PAGESIZE, totalcount:0,contacts:[]
       }
     }
   },
